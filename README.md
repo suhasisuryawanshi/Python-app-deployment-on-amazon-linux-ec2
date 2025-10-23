@@ -11,15 +11,18 @@ This project demonstrates how I deployed a **Python web application** on an **Am
 ## Prerequisites
 Before starting, make sure you have:
 1. **AWS EC2 Instance**
-  - Running Amazon Linux 2
-  - Accessible via SSH with a valid key pair
+    - Running Amazon Linux 2
+    - Accessible via SSH with a valid key pair
+      
 
 2. **Security Group Setup**
-  - Port **22 (SSH)** open for connecting
-  - Port **5000 (or your Python app port)** open for serving the app
+    - Port **22 (SSH)** open for connecting
+    - Port **5000 (or your Python app port)** open for serving the app
+      
 
 4. **GitHub Repository**
-  - A Python app stored in a public or private Git repository
+    - A Python app stored in a public or private Git repository
+    - 
 
 ---
 
@@ -134,5 +137,6 @@ My Python web application is now running on Amazon Linux EC2. Using **Gunicorn**
 In this project, I deployed a Python application on an AWS EC2 instance. After installing Python and Git, I cloned the repository, created a virtual environment, installed dependencies, and deployed the app with Gunicorn. This marks my first successful python web app deployment on the cloud.
 
 ---
+
 
 

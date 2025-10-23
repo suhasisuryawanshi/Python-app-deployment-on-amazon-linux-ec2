@@ -4,7 +4,7 @@
 ---
 
 ## Overview
-This project demonstrates how I deployed a **Python webapplication** on an **Amazon Lilnux EC2 instance**. It covrs installing Python, creatin a virtual environment, installing dependencies, running the app locally, and deploying it using **Gunicorn** as a production-ready server.
+This project demonstrates how I deployed a **Python web application** on an **Amazon Lilnux EC2 instance**. It covers installing Python, creating a virtual environment, installing dependencies, running the app locally, and deploying it using **Gunicorn** as a production-ready server.
 
 ---
 
@@ -19,7 +19,7 @@ Before starting, make sure you have:
    - Port **5000 (or your Python app port)** open for serving the app
 
 3. **GitHub Repository**
-  - A Python app storedd in a public or private Git repository
+  - A Python app stored in a public or private Git repository
 
 ---
 
@@ -94,7 +94,7 @@ http://<your-ec2-public-ip>:5000
 ### 1. Port Not Accessible
 
 * **Issue**: Application runs, but browser shows
-*connetion refused*.
+*connection refused*.
 * **Fix**: Update your EC2 **Security Group** -> Add inbound rule for port '5000' (or the port your app uses) with source set to '0.0.0.0/0'.
 
 ---
@@ -102,7 +102,7 @@ http://<your-ec2-public-ip>:5000
 ### 2. Virtual Environment Not Activating
 
 * **Issue**: Error like 'permission denied' while activating virtual environment.
-* **Fix**: Ensure you'e using the correct path:
+* **Fix**: Ensure you're using the correct path:
 
 ```
 source myenv/bin/activate
@@ -113,7 +113,7 @@ If needed, run with 'sudo bash myenv/bin/activate'.
 ---
 
 ### Result
-My Python web application is now running on Amazon Linux EC2. Using **Uunicorn**, the app stays actie as a production-grade WSGI server accessible over the public IP.
+My Python web application is now running on Amazon Linux EC2. Using **Gunicorn**, the app stays active as a production-grade WSGI server accessible over the public IP.
 
 ![alt text](image.png)
 
@@ -131,6 +131,7 @@ My Python web application is now running on Amazon Linux EC2. Using **Uunicorn**
 
 ## Summary
 
-In this project, I deployed a Python application on an AWS EC2 instance. After installling Python and Git, I cloned the repository, created a virtual environment, installed dependencies, and deployed the app with Gunicorn. This marks my first successful python web app deployment on the cloud.
+In this project, I deployed a Python application on an AWS EC2 instance. After installing Python and Git, I cloned the repository, created a virtual environment, installed dependencies, and deployed the app with Gunicorn. This marks my first successful python web app deployment on the cloud.
 
 ---
+

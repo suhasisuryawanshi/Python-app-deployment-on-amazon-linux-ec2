@@ -22,7 +22,7 @@ Before starting, make sure you have:
 
 4. **GitHub Repository**
     - A Python app stored in a public or private Git repository
-    - 
+      
 
 ---
 
@@ -137,6 +137,7 @@ My Python web application is now running on Amazon Linux EC2. Using **Gunicorn**
 In this project, I deployed a Python application on an AWS EC2 instance. After installing Python and Git, I cloned the repository, created a virtual environment, installed dependencies, and deployed the app with Gunicorn. This marks my first successful python web app deployment on the cloud.
 
 ---
+
 
 
 

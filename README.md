@@ -1,138 +1,136 @@
+# Python App Deployment on Amazon Linux EC2
+*"From Virtual Environment to Gunicorn, Deploying My First Python App on the Cloud"*
 
-# Python app deployment on Amazon linux aws ec2
-*"From virtual envirnment to Gunicorn, Deploying my first python App on the Cloud"*
 ---
+
 ## Overview
-This project demonstrates how I deployed a ** Python application** on a **Amazon linux EC2 instance**. It convers Installing Python, creating a virtual environment, installing dependencies, running the app locally, and deplying it using **Gunicorn** as a production-ready server.
+This project demonstrates how I deployed a **Python webapplication** on an **Amazon Lilnux EC2 instance**. It covrs installing Python, creatin a virtual environment, installing dependencies, running the app locally, and deploying it using **Gunicorn** as a production-ready server.
 
 ---
 
-##Prerequisites
-Before starting make sure you have 
-    1. **AWS EC2 instance**
-        -  Running Amazong linux 2
-        - Accesible wia SSh with a valid key pair
-    
-    2. **Security Group Setup**
-        - Port **22 (SSH)** open for connecting
-        - Port **5000 (or your Python app port )** open for serving the app
-    
-    3. **GitHub Repository**
-        - A Python app stored in a public or private Gt repository
-    
-    ---
+## Prerequisites
+Before starting, make sure you have:
+1. **AWS EC2 Instance**
+  - Running Amazon Linux 2
+  - Accessible via SSH with a valid key pair
 
-    ##Steps followed
+2. **Security Group Setup**
+   - Port **22 (SSH)** open for connecting
+   - Port **5000 (or your Python app port)** open for serving the app
 
-    ###1. Update packages and install python3
-    ```bash
-    sudo yum update -y
-    sudo yum install python3 -y
-    sudo yum install python3-pip -y
-    ```
+3. **GitHub Repository**
+  - A Python app storedd in a public or private Git repository
 
-    ---
+---
 
-    ###2. Install Git and Clone Application
+## Steps Followed
 
-    ```bash
-    git -v  #check if git installed
-    sudo yum install git -y
-    sudo git clone <url>
-    ls
-    cd pythonapp/
-    ```
+### 1. Update Packages and Install Python3
+```bash
+sudo yum update -y
+sudo yum install python3 -y
+sudo yum install python3-pip -y
+```
+---
 
-    ---
+### 2.Install Git and Clone Aplication
+```bash
+git -v # check if git installed
+sudo yum install git -y
+sudo git clone <url>
+ls
+cd pythonapp/
+```
 
-    ###3. Creat and active virtial environment
+---
 
-    ```bash
-    pthon3 -m venv myenv
-    sudo bash myenv/bin/activate
-    ```
+### 3. Create and Activate Virtual Environment
+```bash
+python3 -m venv myenv
+sudo python3 -m venv myenv
+sudo bash myenv/bin/activate
+```
 
-    ---
+---
 
-    ###4. Install Dependencies
-    ```bash
-    sudo pip install -r requirements.txt
-    ```
+### 4. Install Dependencies
+```bash
+sudo pip install -r requirements.txt
+```
 
-    ---
+---
 
-    ###5. Run the app locally
-    ```bash
-    pathon3 app.py
-    ```
+### 5. Run the App Locally
+```bash
+python3 app.py
+```
 
-    ---
+---
 
-    ###6. Deploy with Gunicorn (Production Server)
-    ```bash
-    sudo gunicorn --bind 0.0.0.0:5000 app:app -daemon
-    ```
+### 6. Deploy with Gunicorn (Production Server)
+```bash
+sudo gunicorn --bind 0.0.0.0:5000 app:app --daemon
+```
 
-    ---
+---
+### 7. Test Locally
+```bash
+curl localhost
+```
 
-    ###7. test localy
-    ```bash
-    curl localhost
-    ```
-    
-    ---
+---
 
-    ###8. Access in Browser
-    Copy your **EC2 Public IP** and visit:
-    ```
-    http://<your ec2 public ip>:5000
-    ```
+### 8. Access in Browser
 
-    ---
+copy your **EC2 public IP** and visit:
+```
+http://<your-ec2-public-ip>:5000
+```
 
-    ## Common error and fixes
+---
 
-    ###1. Port Not Accessible
+## Common Issues & Fixes
 
-    * **Issue**: Error like 'permission denied' while activating virtual environment.
-    * **Fix**: Ensure you are using the correct path:
-    
-    ```bash
-    source myenv/bin/activate
-    ```
+### 1. Port Not Accessible
 
-    if needed, run with 'sudo bash myenv/bin/activate'.
+* **Issue**: Application runs, but browser shows
+*connetion refused*.
+* **Fix**: Update your EC2 **Security Group** -> Add inbound rule for port '5000' (or the port your app uses) with source set to '0.0.0.0/0'.
 
-    ---
+---
 
-    ###3. Gunicorn Not Installed
-    * **Issue**: 'Command not found Gunicorn'.
-    * **Fix**: Install it inside your environment.
+### 2. Virtual Environment Not Activating
 
-    ```bash
-    pip install gunicorn
-    ```
+* **Issue**: Error like 'permission denied' while activating virtual environment.
+* **Fix**: Ensure you'e using the correct path:
 
-    ---
+```
+source myenv/bin/activate
+```
 
-    ##Result
-    My Python web application is running on Amazon linux EC2. **Gunicorn**, the app stays active as a production-grade WSGI server accessivle over the public IP.
+If needed, run with 'sudo bash myenv/bin/activate'.
 
-    ![alt text](image.png)
+---
 
-    ---
+### Result
+My Python web application is now running on Amazon Linux EC2. Using **Uunicorn**, the app stays actie as a production-grade WSGI server accessible over the public IP.
 
-    ##Tech Stack
+![alt text](image.png)
 
-    * **OS**: Amazon Linux 2
-    * **Language**: Python 3
-    * **Package Manganer**: Pip
-    * **Web Server Gateway**: Gunicorn
-    * **Hosting**: AWS EC2
+---
 
-    ---
+## Tech Sack
 
-    ##Summary
+* **OS**: Amazon Linux 2
+* **Language**: Python 3
+* **Package Manager**: pip
+* **Web Server Gateway**: Gunicorn
+* **hosting**: AWS EC2
 
+---
 
-    In this project, I diployed a python applicaton on an AWS EC2 instance. After installing pytho. I cloned repositiory, crated, created a virtual environment, install depedencies, and deployed the app with Gunicorn. This marks my first successfull Python web app deployment on the cloud.
+## Summary
+
+In this project, I deployed a Python application on an AWS EC2 instance. After installling Python and Git, I cloned the repository, created a virtual environment, installed dependencies, and deployed the app with Gunicorn. This marks my first successful python web app deployment on the cloud.
+
+---

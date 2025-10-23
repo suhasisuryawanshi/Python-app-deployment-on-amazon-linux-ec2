@@ -1,5 +1,5 @@
 
-#python app deployment on Amazon linux aws ec2
+# Python app deployment on Amazon linux aws ec2
 *"From virtual envirnment to Gunicorn, Deploying my first python App on the Cloud"*
 ---
 ## Overview
@@ -133,5 +133,6 @@ Before starting make sure you have
     ---
 
     ##Summary
+
 
     In this project, I diployed a python applicaton on an AWS EC2 instance. After installing pytho. I cloned repositiory, crated, created a virtual environment, install depedencies, and deployed the app with Gunicorn. This marks my first successfull Python web app deployment on the cloud.
